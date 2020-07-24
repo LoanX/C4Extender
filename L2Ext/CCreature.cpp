@@ -1197,6 +1197,7 @@ void CCreature::MakeCombat()
 
 void CCreature::StopMove()
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	typedef void(*f)(CCreature*);
 	f(0x4E4CB0L)(this);
 }

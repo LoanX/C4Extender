@@ -17,6 +17,8 @@ extern User* g_CharInfoUser[16];
 
 void CPacketFix::CharInfoFix(CUserSocket *pSocket, const char *format, ...)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
+
 	User *pUser = 0;
 	UINT threadIndex = GetThreadIndex();
 	if(threadIndex < 16)

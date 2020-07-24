@@ -400,7 +400,7 @@ void CUserDB::KickOutFromColiseum(IVector pos)
 					{
 						if(pUser->pSD->Pos.y > 45274 && pUser->pSD->Pos.y < 48164)
 						{
-							pUser->StopMove();
+							pUser->StopMove();							
 							PlayerAction::OnTeleportToLocation(pUser, pos.x, pos.y, pos.z, false);
 						}
 					}
@@ -434,7 +434,7 @@ void CUserDB::KickOutFromRange(IVector pos, int minX, int maxX, int minY, int ma
 					{
 						if(pUser->pSD->Pos.y >= y1 && pUser->pSD->Pos.y <= y2)
 						{
-							pUser->StopMove();
+							pUser->StopMove();							
 							PlayerAction::OnTeleportToLocation(pUser, pos.x, pos.y, pos.z, false);
 						}
 					}

@@ -115,7 +115,7 @@ void L2Ext::BaseData()
 	hMutex = CreateMutex(NULL, false, _T("Global\\C4Ext"));
 	if(GetLastError() == ERROR_ALREADY_EXISTS)
 	{
-		MessageBox(NULL, _T("Lineage II server is already running!"), _T("Interlude Extension"), MB_OK);
+		MessageBox(NULL, _T("Lineage II server is already running!"), _T("C4 Extension"), MB_OK);
 		ExitProcess(-1);
 		return;
 	}

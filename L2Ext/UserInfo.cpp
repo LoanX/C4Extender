@@ -16,7 +16,6 @@ extern UINT g_DefaultTitleColor;
 void CPacketFix::UserInfoFix(CUserSocket *pSocket, const char *format, ...)
 {
 	guard;
-
 	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 
 	CPacket Packet;
@@ -46,7 +45,7 @@ void CPacketFix::UserInfoFix(CUserSocket *pSocket, const char *format, ...)
 					}
 				}
 			}
-			/*S*/ Packet.WriteS(wName); //nickname
+	/*S*/ Packet.WriteS(wName); //nickname
 
 			DWORD Race = va_arg(tag, DWORD);
 			DWORD Sex = va_arg(tag, DWORD);
@@ -266,7 +265,8 @@ void CPacketFix::UserInfoFix(CUserSocket *pSocket, const char *format, ...)
 	
 	/*BuffSize*/ DWORD ClanPrivilegeBuffSize = va_arg(tag, DWORD); //c5fix = 4	//pledge_rights_buff_size
 	/*b*/ PUCHAR ClanPrivilege = va_arg(tag, PUCHAR); //ClanPrivileges - 32 BYTES	//pledge_rights_buff
-	/*d*/ Packet.WriteD(8388606);	//write static rights
+//	/*d*/ Packet.WriteD(8388606);	//write static rights
+	/*d*/ Packet.WriteD(0x00);	//C4 Fix?
 	
 	/*d*/ Packet.WriteD(0x00);
 	/*d*/ Packet.WriteD(0x00);
@@ -418,7 +418,7 @@ void CPacketFix::GMUserInfoFix(CUserSocket *pSocket, const char *format, ...)
 	/*d*/ Packet.WriteD(BaseClass);	//class
 
 	/*d*/ Packet.WriteD(va_arg(tag, DWORD));	//level
-	/*d*/ Packet.WriteQ(va_arg(tag, INT32));	// - Exp will be Q in c5 format in format
+	/*d*/ Packet.WriteD(va_arg(tag, INT32));	// - Exp will be Q in c5 format in format
 	/*d*/ Packet.WriteD(va_arg(tag, DWORD));	//str
 	/*d*/ Packet.WriteD(va_arg(tag, DWORD));	//dex
 	/*d*/ Packet.WriteD(va_arg(tag, DWORD));	//con

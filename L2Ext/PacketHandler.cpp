@@ -635,7 +635,7 @@ bool MoveToLocationPacket(CUserSocket *pSocket, const unsigned char* packet)
 			FVector pos(x, y, z);
 			if(!g_DoorData.CanSee(pUser->pSD->Pos, pos))
 			{
-			//	g_Log.Add(CLog::Blue, "[%s] cannot see!", __FUNCTION__);
+				g_Log.Add(CLog::Blue, "[%s] cannot see!", __FUNCTION__);
 				pUser->ActionFailed();
 				return false;
 			}
@@ -649,6 +649,7 @@ bool MoveToLocationPacket(CUserSocket *pSocket, const unsigned char* packet)
 
 bool ConfirmDialog(CUserSocket *pSocket, const unsigned char* packet)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	guard;
 	bool ret = true;
 
@@ -669,6 +670,7 @@ bool ConfirmDialog(CUserSocket *pSocket, const unsigned char* packet)
 						{
 							pUser->DeleteItemInInventory(8615, 1);
 							pUser->StopMove();
+							g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 							int x = pUser->pSD->pExData->SummonFriend.nX;
 							int y = pUser->pSD->pExData->SummonFriend.nY;
 							int z = pUser->pSD->pExData->SummonFriend.nZ;
@@ -762,6 +764,7 @@ bool RequestAcquireSkillInfo(CUserSocket *pSocket, const unsigned char* packet)
 
 bool ActionPacket(CUserSocket *pSocket, const unsigned char* packet)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	guard;
 	bool ret = true;
 
@@ -1704,8 +1707,11 @@ bool GiveItemToPet(CUserSocket *pSocket, const unsigned char* packet)
 
 bool GMCommand(CUserSocket *pSocket, const unsigned char* packet) //SysCMD2Packet
 {
+	g_Log.Add(CLog::Error,"[%s]",__FUNCTION__);
+
 	guard;
 	bool ret = true;
+
 	if(User *pUser = pSocket->GetUser())
 	{
 		if(pUser->pSD->nBuilder)
@@ -1716,7 +1722,7 @@ bool GMCommand(CUserSocket *pSocket, const unsigned char* packet) //SysCMD2Packe
 			if(CBuilderCommand::Handle(pUser, wsCommand))
 			{
 				ret = _SockFunc(0x00864B40L)(pSocket, packet);
-			}else
+			}
 			{
 				ret = false;
 			}
@@ -1886,6 +1892,7 @@ bool LoginPacket(CUserSocket *pSocket, const unsigned char* packet)
 		CIPAddress ip(pSocket->addr);
 		g_Log.Add(CLog::Error, "[%s] Account[%S][%d] oneTimeKey[%d] s1[%d] s2[%d] country[%d] IP[%s] - hack!", __FUNCTION__, accountName, accountId, oneTimeKey, session1, session2, country, ip.ToString().c_str());
 	}
+
 	unguard;
 	return ret;
 }
@@ -1921,6 +1928,8 @@ bool LogoutPacket(CUserSocket *pSocket, const unsigned char* packet)
 
 bool MagicSkillUsePacket(CUserSocket *pSocket, const unsigned char* packet)
 {
+	g_Log.Add(CLog::Error,"[%s]",__FUNCTION__);
+	
 	guard;
 	bool ret = true;
 

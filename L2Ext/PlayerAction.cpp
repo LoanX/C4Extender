@@ -558,6 +558,9 @@ void PlayerAction::TradeCancelled(CTrade *pTrade, User *pTrader)
 
 bool PlayerAction::OnTeleportToLocation(User *pUser, int nX, int nY, int nZ, int FadeScreen)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
+	
+	
 	typedef bool (*f)(User*, int, int, int, int);
 
 	if(pUser->ValidUser() && !pUser->pSD->nInBattleField && pUser->pSD->nInPeaceZone && pUser->pSD->nKarma == 0)
@@ -571,7 +574,7 @@ bool PlayerAction::OnTeleportToLocation(User *pUser, int nX, int nY, int nZ, int
 		}
 	}
 
-	pUser->pCreatureController->AsyncDoNothing();
+	//pUser->pCreatureController->AsyncDoNothing();
 	
 	if(pUser->IsNowTrade())
 	{
@@ -590,9 +593,9 @@ bool PlayerAction::OnTeleportToLocation(User *pUser, int nX, int nY, int nZ, int
 
 	if(f(0x8151E0)(pUser, nX, nY, nZ, FadeScreen))
 	{	
-		g_CursedWeaponSystem.OnTeleport(pUser);
+		//g_CursedWeaponSystem.OnTeleport(pUser);
 		return true;
-	}
+	}	
 
 	return false;
 }

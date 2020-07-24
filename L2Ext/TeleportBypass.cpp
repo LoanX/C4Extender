@@ -144,6 +144,7 @@ void CTeleportBypass::RequestTeleport(User *pUser, wstring wName)
 
 void CTeleportBypass::Teleport(User *pUser, wstring wName)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	map<wstring, TeleportData>::iterator Iter = mData.find(wName);
 	if(Iter!=mData.end())
 	{

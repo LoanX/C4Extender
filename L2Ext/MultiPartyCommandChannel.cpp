@@ -5,6 +5,7 @@
 
 void CMultiPartyCommandChannel::TeleportMPCCToLocation(UINT requestorId, INT32 x, INT32 y, INT32 z)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	guard;
 
 	for(UINT n=0;n<parties.size();n++)
@@ -18,7 +19,7 @@ void CMultiPartyCommandChannel::TeleportMPCCToLocation(UINT requestorId, INT32 x
 				if(User *pUser = members[m]->SafeCastUser())
 				{
 					if(pUser->pSD->nAlive)
-					{
+					{						
 						pUser->StopMove();
 						INT32 rand = g_Random.RandInt(10);
 						rand -= 5;
@@ -47,6 +48,7 @@ void CMultiPartyCommandChannel::TeleportMPCCToLocation(UINT requestorId, INT32 x
 
 void CMultiPartyCommandChannel::TeleportMPCCToLocationByIndex(UINT requestorId, UINT index, INT32 x, INT32 y, INT32 z)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	guard;
 
 	if(index < parties.size())
@@ -60,7 +62,7 @@ void CMultiPartyCommandChannel::TeleportMPCCToLocationByIndex(UINT requestorId, 
 				if(User *pUser = members[m]->SafeCastUser())
 				{
 					if(pUser->pSD->nAlive)
-					{
+					{						
 						pUser->StopMove();
 						INT32 rand = g_Random.RandInt(10);
 						rand -= 5;

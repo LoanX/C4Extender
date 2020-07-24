@@ -9,10 +9,11 @@ void CPacketFix::Initialize()
 	{
 		g_CharInfoUser[n] = 0;
 	}
+	
 	g_HookManager.WriteCall( 0x58B9F3, LoadCharSelectedPacket, 0);
 	g_HookManager.WriteJump( 0x574B48, LoadCharacterDiss, 0);
 	g_HookManager.WriteCall( 0x574C31, CharSelectInfoFix, 0);
-	
+
 	//Sell bug fix by TestDude
 	g_HookManager.WriteMemoryBYTE(0x87A4EA, 0x44);
 	//Buy item bug by me
@@ -92,6 +93,7 @@ void CPacketFix::Initialize()
 	//DoorInfo
 	g_HookManager.WriteCall(0x7FEF32, SendDoorInfo, 0);
 	g_HookManager.WriteCall(0x776A63, SendDoorInfo, 0);
+
 }
 
 void CPacketFix::CharInfoSetUser(User *pUser, CUserSocket *pGMSocket)

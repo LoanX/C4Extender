@@ -96,7 +96,7 @@ DllExport BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpvRes
 				CPostLoad::Initialize();
 				CSharedFactory::Initialize();
 				ClassExtender::Initialize();
-				PlayerAction::Initialize();
+				PlayerAction::Initialize();			
 				NpcAction::Initialize();
 				PetAction::Initialize();
 				CreatureAction::Initialize();

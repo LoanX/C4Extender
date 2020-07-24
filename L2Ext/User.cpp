@@ -1379,9 +1379,10 @@ void User::SetPvPFlag()
 
 void User::Kick()
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	if(pSocket)
-	{
-		StopMove();
+	{		
+		StopMove();		
 		pSocket->Close();
 	}
 }

@@ -28,7 +28,7 @@ void CAutoAnnounce::Init()
 /*
 Enabled=1
 AnnounceCount=2
-Announce1_Message=Welcome to ServerName Lineage II Interlude server, hope you enjoy.
+Announce1_Message=Welcome to ServerName Lineage II C4 server, hope you enjoy.
 Announce1_ShowOnEnterWorld=1
 Announce1_Interval=0
 Announce2_Message=Please remember to vote for us, more info at www.servername.com thx in advance.

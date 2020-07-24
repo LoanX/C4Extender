@@ -265,6 +265,8 @@ void CBuilderCommand::LoadBuilderList()
 
 bool CBuilderCommand::Handle(User *pUser, wstring wsBuff)
 {
+	g_Log.Add(CLog::Error,"[%s]",__FUNCTION__);
+
 	if(pUser->ValidUser() && pUser->pSD->nBuilder)
 	{
 		try
@@ -899,6 +901,7 @@ bool CBuilderCommand::ResetClanName(User *pUser, wstring wsParams)
 
 void RandomizePosInColiseum(User *pUser)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	if(pUser->ValidUser())
 	{
 		//MinX=147534	MaxX=151470	MinY=45274	MaxY=48164	MinZ=-19935	MaxZ=19935
@@ -913,6 +916,7 @@ void RandomizePosInColiseum(User *pUser)
 				newX += g_MTRandom.RandInt(1936);	//difference - 2000
 				newY += g_MTRandom.RandInt(890);	//difference - 2000
 				pUser->StopMove();
+				g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 				PlayerAction::OnTeleportToLocation(pUser, newX, newY, CGeo::GetInstance()->GetZLoc(newX, newY, newZ), false);
 			}
 		}

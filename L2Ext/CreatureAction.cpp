@@ -593,7 +593,7 @@ bool CreatureAction::MoveActionExOnStart(CMoveActionEx *pAction)
 					if(User *pUser = pCreature->SafeCastUser())
 					{
 						pUser->ActionFailed();
-			//			g_Log.Add(CLog::Blue, "[%s] moving creature[%S] to [%f][%f][%f] blocked!", __FUNCTION__, pCreature->pSD->wszName, pTarget->pSD->Pos.x, pTarget->pSD->Pos.y, pTarget->pSD->Pos.z);
+						g_Log.Add(CLog::Blue, "[%s] moving creature[%S] to [%f][%f][%f] blocked!", __FUNCTION__, pCreature->pSD->wszName, pTarget->pSD->Pos.x, pTarget->pSD->Pos.y, pTarget->pSD->Pos.z);
 					}
 				
 					return false;
@@ -624,7 +624,7 @@ bool CreatureAction::MoveActionOnStart(CMoveAction *pAction)
 				if(User *pUser = pCreature->SafeCastUser())
 				{
 					pUser->ActionFailed();
-			//		g_Log.Add(CLog::Blue, "[%s] moving creature[%S] to [%f][%f][%f] blocked!", __FUNCTION__, pCreature->pSD->wszName, pAction->GetDestination().x, pAction->GetDestination().y, pAction->GetDestination().z);
+					g_Log.Add(CLog::Blue, "[%s] moving creature[%S] to [%f][%f][%f] blocked!", __FUNCTION__, pCreature->pSD->wszName, pAction->GetDestination().x, pAction->GetDestination().y, pAction->GetDestination().z);
 				}
 			
 				return false;

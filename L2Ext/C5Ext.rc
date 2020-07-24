@@ -69,14 +69,14 @@ BEGIN
     BEGIN
         BLOCK "041504b0"
         BEGIN
-            VALUE "Comments", "L2Server Interlude Extension - vanganth@hotmail.com"
-            VALUE "FileDescription", "L2Server Interlude Extension"
-            VALUE "FileVersion", "1, 3, 1, 2"
+            VALUE "Comments", "L2Server C4 Extension - Credits to Vanganth"
+            VALUE "FileDescription", "L2Server C4 Extension"
+            VALUE "FileVersion", "1, 0, 0, 1"
             VALUE "InternalName", "C4Ext"
             VALUE "LegalCopyright", "Vanganth 2009 - 2015"
             VALUE "OriginalFilename", "C4Ext.dll"
             VALUE "ProductName", "C4Ext"
-            VALUE "ProductVersion", "1, 3, 1, 2"
+            VALUE "ProductVersion", "1, 0, 0, 1"
         END
     END
     BLOCK "VarFileInfo"
@@ -91,7 +91,7 @@ END
 // Bitmap
 //
 
-IDB_BITMAP2             BITMAP                  "interlude.bmp"
+IDB_BITMAP2             BITMAP                  "C4.bmp"
 #endif    // Polish resources
 /////////////////////////////////////////////////////////////////////////////
 
