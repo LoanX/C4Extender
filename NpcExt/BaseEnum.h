@@ -109,8 +109,8 @@ enum SlotType
 	SlotOnePiece = 32768,
 	SlotHair = 65536,
 	SlotAllDress = 131072,
-	SlotHairEx = 262144,
-	SlotHairAll = 524288
+//C5 Feature	SlotHairEx = 262144,
+//C5 Feature	SlotHairAll = 524288
 };
 
 enum WeaponType

@@ -33,8 +33,8 @@ enum TerritoryType
 	ADEN_CASTLE = 7,
 	INNADRIL_CASTLE = 8,
 	GODDARD_CASTLE = 9,
-	RUNE_CASTLE = 10,
-	SCHUTTGARD_CASTLE = 11,
+//C5 Feature	RUNE_CASTLE = 10,
+//C5 Feature	SCHUTTGARD_CASTLE = 11,
 	//end of castle zones
 	FORBIDDEN_OFFLINE_SHOP_ZONE = 12,
 	TRADE_GEODATA_CHECK_ZONE = 13,
@@ -213,8 +213,8 @@ enum SlotType
 	SlotOnePiece = 32768,
 	SlotHair = 65536,
 	SlotAllDress = 131072,
-	SlotHairEx = 262144,
-	SlotHairAll = 524288
+//C5 Feature	SlotHairEx = 262144,
+//C5 Feature	SlotHairAll = 524288
 };
 
 enum ArmorType
@@ -259,6 +259,6 @@ enum CastleType
 	CastleAden = 5,
 	CastleInnadril = 6,
 	CastleGoddard = 7,
-	CastleRune = 8,
-	CastleSchuttgard = 9
+//C5 Feature	CastleRune = 8, 
+//C5 Feature	CastleSchuttgard = 9
 };

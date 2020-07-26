@@ -12,9 +12,7 @@ void CSiegeStat::InitVectors()
 	vData.push_back(mData); //Oren
 	vData.push_back(mData); //Aden
 	vData.push_back(mData); //Innadril
-	vData.push_back(mData); //Goddard
-	vData.push_back(mData); //Rune
-	vData.push_back(mData); //Schuttgard
+	vData.push_back(mData); //Goddard	
 	CSiegeDataCache Cache;
 	vCache.push_back(Cache); //Index 0 not used
 	vCache.push_back(Cache); //Gludio
@@ -23,9 +21,7 @@ void CSiegeStat::InitVectors()
 	vCache.push_back(Cache); //Oren
 	vCache.push_back(Cache); //Aden
 	vCache.push_back(Cache); //Innadril
-	vCache.push_back(Cache); //Goddard
-	vCache.push_back(Cache); //Rune
-	vCache.push_back(Cache); //Schuttgard
+	vCache.push_back(Cache); //Goddard	
 }
 
 CSiegeStat& CSiegeStat::GetInstance()
@@ -61,13 +57,7 @@ CSiegeStat::CastleType CSiegeStat::GetCastle(int nCastle)
 		break;
 	case 7:
 		return Goddard;
-		break;
-	case 8:
-		return Rune;
-		break;
-	case 9:
-		return Schuttgard;
-		break;
+		break;	
 	default:
 		return NotCastle;
 		break;
@@ -89,11 +79,7 @@ CSiegeStat::CastleType CSiegeStat::GetCastleType(FVector& Pos)
 	else if(g_TerritoryChecker.IsInTerritory(Pos, INNADRIL_CASTLE))
 		return Innadril;
 	else if(g_TerritoryChecker.IsInTerritory(Pos, GODDARD_CASTLE))
-		return Goddard;
-	else if(g_TerritoryChecker.IsInTerritory(Pos, RUNE_CASTLE))
-		return Rune;
-	else if(g_TerritoryChecker.IsInTerritory(Pos, SCHUTTGARD_CASTLE))
-		return Schuttgard;
+		return Goddard;	
 	return NotCastle;
 }
 void CSiegeStat::ReportKillDeathCount(FVector& Pos, int KillerDBID, int Pledge1ID, int OwnedDBID, int Pledge2ID)

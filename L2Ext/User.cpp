@@ -637,15 +637,20 @@ bool User::CanGetPartyBonus(CCreature *pCreature)
 
 bool User::UseItem(CItem *pItem, int nForce)
 {
+	g_Log.Add(CLog::Blue,"[%s] -> pItem = [%d], nForce = [%d]",__FUNCTION__,pItem,nForce);
+
 	typedef bool (__fastcall * UseItemS) (User*, CItem*, int nForce);
 	UseItemS _UseItem = (UseItemS) 0x0080E160;
+	
 	if(pItem)
 		return _UseItem(this, pItem, nForce);
-	else return false;
+	else 
+		return false;
 }
 
 bool User::IsItemUsable()
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
 	typedef bool (*f)(User*);
 	return f(0x811EB0L)(this);
 }
@@ -993,6 +998,8 @@ User *User::GetUserBySID(UINT *pSID)
 
 int User::GetEquipedItemSlot(int nItemIndex)
 {
+	g_Log.Add(CLog::Blue,"[%s] nItemIndex = [%d]",__FUNCTION__,nItemIndex);
+
 	int nSlot = CItem::SlotType_None;
 	if(this)
 	{

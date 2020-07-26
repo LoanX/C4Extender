@@ -1,0 +1,42 @@
+07/25/2020 21:37:35.030, creating g_ContainerDB
+07/25/2020 21:37:35.053, g_ContainerDB Created
+07/25/2020 21:37:35.130, centered lock created.
+07/25/2020 21:37:35.192, centered lock created.
+07/25/2020 21:37:35.208, centered lock created.
+07/25/2020 21:37:35.229, centered lock created.
+07/25/2020 21:37:35.245, centered lock created.
+07/25/2020 21:37:35.260, centered lock created.
+07/25/2020 21:37:35.439, Creating g_World
+07/25/2020 21:37:35.439, Initializing CGeoData()
+07/25/2020 21:37:35.440, g_World Created
+07/25/2020 21:37:35.448, g_SharedCreature [155.144]MB
+07/25/2020 21:37:35.448, g_SharedItem [127.029]MB
+07/25/2020 21:37:35.448, g_SharedStaticObject [0.164]MB
+07/25/2020 21:37:35.448, g_SharedPledge [5.913]MB
+07/25/2020 21:37:35.448, g_SharedParty [1.869]MB
+07/25/2020 21:37:35.448, ItemSmartIdManager [48.924]MB
+07/25/2020 21:37:35.448, CreatureSmartIdManager [3.805]MB
+07/25/2020 21:37:35.448, StaticObjectSmartIdManager [0.054]MB
+07/25/2020 21:37:35.448, PledgeSmartIdManager [0.544]MB
+07/25/2020 21:37:35.448, PartySmartIdManager [0.544]MB
+07/25/2020 21:37:35.512, initializing TLM[Thread Local World Creature Map] [89]MB
+07/25/2020 21:37:35.536, initializing TLM[Thread Local World User Map] [32]MB
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal1_none], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal1_twilight], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal1_dawn], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal2_none], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal2_twilight], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal2_dawn], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal3_none], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal3_twilight], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_seal3_dawn], Enabled[0]
+07/25/2020 21:37:35.536, + NPC POS EVENT : Name[ssq_event], Enabled[0]
+07/25/2020 21:37:35.573, Starting ListenThread
+07/25/2020 21:37:35.595, Init GameGuardAuth Module
+07/25/2020 21:37:35.625, Loading Petition Category
+07/25/2020 21:37:35.625, Loading MonRaceData
+07/25/2020 21:37:35.625, Start Loading Server Data
+07/25/2020 21:37:35.634, Loading BuilderCmdHandler
+07/25/2020 21:37:35.644, Loading GeoData
+07/25/2020 21:37:35.644, Total MapBug Cell Count[0]
+07/25/2020 21:37:35.645, Loading PathNode

@@ -37,7 +37,7 @@
 			Name="Release|Win32"
 			>
 			<DebugSettings
-				Command=""
+				Command="D:\L2OFF\C4\SVN Vanganth C4\L2Server\L2Server.exe"
 				WorkingDirectory=""
 				CommandArguments=""
 				Attach="false"

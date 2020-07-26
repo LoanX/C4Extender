@@ -884,6 +884,8 @@ void PlayerAction::OnTimerExpired(User *pUser, int nTimerID)
 
 bool PlayerAction::UnequipItem(User *pUser, int nSlotType)
 {
+	g_Log.Add(CLog::Black,"[%s] -> nSlotType = [%d]",__FUNCTION__,nSlotType);
+
 	if(pUser->ValidUser())
 	{
 		if(pUser->pSD->nCursedOwner && nSlotType == CItem::LRHand)
@@ -908,6 +910,8 @@ CParty *PlayerAction::OnUpdateHP(User *pUser)
 
 bool PlayerAction::UseItem(User *pUser, CItem *pItem, int nForce)
 {
+	g_Log.Add(CLog::Blue,"[%s] SlotType = [%d]",__FUNCTION__,pItem->pSID->nSlotType);
+
 	if(pItem->IsValidItem() && pUser->ValidUser())
 	{
 		if(pUser->IsNowTrade())
@@ -994,6 +998,7 @@ bool PlayerAction::UseItem(User *pUser, CItem *pItem, int nForce)
 		}
 
 		int TerritoryID = pUser->pSD->nInBlockItemsZone;
+		
 		if(TerritoryID)
 		{
 			CBlockItemsTerritory *pTerritory = g_TerritoryChecker.GetTerritory(TerritoryID)->SafeCastBlockItems();
@@ -1009,6 +1014,8 @@ bool PlayerAction::UseItem(User *pUser, CItem *pItem, int nForce)
 		
 		return pUser->UseItem(pItem, nForce);
 	}
+	g_Log.Add(CLog::Error,"Not Valid Item!");
+
 	return false;
 }
 

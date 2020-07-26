@@ -337,6 +337,8 @@ bool CAuction::RequestSelectAuctionItem(User *pUser)
 
 bool CAuction::HandleSelectedItem(User *pUser, UINT itemServerId)
 {
+	g_Log.Add(CLog::Blue,"[%s] itemServerId = [%d]",__FUNCTION__,itemServerId);
+
 	guard;
 	if(m_Enabled)
 	{

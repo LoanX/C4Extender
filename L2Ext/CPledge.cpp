@@ -870,6 +870,8 @@ bool CPledge::IsValidSubPledgeName(wstring wName)
 
 void CPledge::OpenAllWindowPacket(User *pUser, bool bGM, PWCHAR wszActiveUser)
 {
+	g_Log.Add(CLog::Blue,"[%s]",__FUNCTION__);
+
 	CSocket *pSocket = pUser->GetSocket();
 	if(this && pSD && pUser && pSocket)
 	{
@@ -954,13 +956,16 @@ void CPledge::OpenAllWindowPacket(User *pUser, bool bGM, PWCHAR wszActiveUser)
 		nPledgeType = 0;
 		if(nIsInWar != 0)
 			nInWar = 1;
+		
 		//Prepare packet
 		if(!bGM)
 		{		
+			g_Log.Add(CLog::Error,"[%s] Sending...",__FUNCTION__);
+			// Interlude
 			pSocket->Send("cdddSSdddddddddSdddb", 0x53, 0, pSD->nDBID, 0, pSD->wszClanName,
 				pSD->wszClanLeaderName, pSD->nCrestID, pSD->nLevel,
 				pSD->nCastleID, nAgitID, 10, nReputation,
-				pSD->nState, 0, nAllyID, wszAllianceName, nAllianceCrestID, nInWar, nMemberAmount, nBuffLen, cBuff);
+				pSD->nState, 0, nAllyID, wszAllianceName, nAllianceCrestID, nInWar, nMemberAmount, nBuffLen, cBuff);						
 		}
 		else
 		{

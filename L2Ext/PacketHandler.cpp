@@ -1354,6 +1354,8 @@ bool CharSelectPacket(CUserSocket *pSocket, const unsigned char* packet)
 
 bool UseItemPacket(CUserSocket *pSocket, const unsigned char* packet)
 {
+	g_Log.Add(CLog::Blue,"[%s] packet = [%s]",__FUNCTION__,packet);
+
 	guard;
 	bool ret = true;
 	if(User *pUser = pSocket->GetUser())

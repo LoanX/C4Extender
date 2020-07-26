@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1250"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8,00"
+	Version="8.00"
 	Name="C4Ext"
 	ProjectGUID="{9D58C003-2B29-4A89-A6B0-BE14AD47CA9D}"
 	RootNamespace="IlExt"

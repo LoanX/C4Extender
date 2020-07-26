@@ -1,0 +1,7 @@
+07/25/2020 21:37:35.448, Malloc (>32k)
+07/25/2020 21:37:35.512, Malloc (>32k)
+07/25/2020 21:37:35.536, cannot read file "L2SERVER.INI"
+07/25/2020 21:37:35.536, CWatchList::ParseWatchList() file open failed. GetLastError(3)
+07/25/2020 21:37:35.625, Cannot find [..\Script\PetitionCategory.txt]
+07/25/2020 21:37:35.644, [.\BuilderCmdHandler.cpp][13175] Cannot open BuilderCmdAlias.txt
+07/25/2020 21:37:35.645, [.\Path.cpp][440] pathnode.idx does't exist

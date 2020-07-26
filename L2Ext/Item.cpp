@@ -3,7 +3,7 @@
 #include "Augmentation.h"
 
 bool CItem::IsValidItem()
-{
+{	
 	if(this)
 	{
         try

@@ -1058,9 +1058,14 @@ void CreatureAction::OnActivateSkill(CSkillInfo *pSI, CCreature *pCreature, CCre
 
 bool CreatureAction::UseItem(CCreature *pCreature, CItem *pItem, BOOL force)
 {
+	g_Log.Add(CLog::Blue,"[%s] Force(BOOL) = [%d]",__FUNCTION__,force);
+
 	guard;
 
 	INT32 itemId = 0;
+	
+	g_Log.Add(CLog::Error,"IsValidItem = [%d]",pItem->IsValidItem());
+
 	if(g_InfinityShot.IsEnabled())
 	{
 		if(pItem->IsValidItem())
@@ -1156,7 +1161,12 @@ int CreatureAction::ExpInc(CCreature *pCreature, int exp, int affectKarma)
 
 bool CreatureAction::OnValidateSetItem(CCreature *pCreature, int nSlotType)
 {
+	g_Log.Add(CLog::Blue,"[%s] nSlotType = [%d]",__FUNCTION__,nSlotType);
+
 	bool bRet = pCreature->ValidateSetItem(nSlotType);
+	
+	g_Log.Add(CLog::Error,"bRet = [%d]",bRet);
+
 	if(pCreature->ValidUser())
 	{
 		User *pUser = pCreature->GetUser();

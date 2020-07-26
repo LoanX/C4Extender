@@ -188,54 +188,6 @@ void CCastleSiegeManager::LoadINI()
 
 		}
 	}
-	if(GetPrivateProfileString(section, _T("Rune"), 0, temp, 8190, g_ConfigFile))
-	{
-		wstring date = Utils::ReplaceString(temp, L"/", L" ", true);
-		date = Utils::ReplaceString(date, L":", L" ", true);
-		wstringstream dateStream(date);
-		int year, month, day, hour, minute, second;
-		if(dateStream >> year >> month >> day >> hour >> minute >> second)
-		{
-			time_t rawtime = 0;
-			time ( &rawtime );
-			tm tmTime;
-			localtime_s(&tmTime, &rawtime);
-			tmTime.tm_year = year - 1900;
-			tmTime.tm_mon = month - 1;
-			tmTime.tm_mday = day;
-			tmTime.tm_hour = hour;
-			tmTime.tm_min = minute;
-			tmTime.tm_sec = second;
-
-			UINT siegeTime = static_cast<UINT>(mktime ( &tmTime ));
-			m_Dates[CastleRune] = siegeTime;
-
-		}
-	}
-	if(GetPrivateProfileString(section, _T("Schuttgard"), 0, temp, 8190, g_ConfigFile))
-	{
-		wstring date = Utils::ReplaceString(temp, L"/", L" ", true);
-		date = Utils::ReplaceString(date, L":", L" ", true);
-		wstringstream dateStream(date);
-		int year, month, day, hour, minute, second;
-		if(dateStream >> year >> month >> day >> hour >> minute >> second)
-		{
-			time_t rawtime = 0;
-			time ( &rawtime );
-			tm tmTime;
-			localtime_s(&tmTime, &rawtime);
-			tmTime.tm_year = year - 1900;
-			tmTime.tm_mon = month - 1;
-			tmTime.tm_mday = day;
-			tmTime.tm_hour = hour;
-			tmTime.tm_min = minute;
-			tmTime.tm_sec = second;
-
-			UINT siegeTime = static_cast<UINT>(mktime ( &tmTime ));
-			m_Dates[CastleSchuttgard] = siegeTime;
-
-		}
-	}
 }
 
 void CCastleSiegeManager::TimerExpired()

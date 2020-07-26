@@ -228,26 +228,6 @@ void CTerritoryChecker::ReadData(std::string sFile)
 							}
 							pTerritory->AddZRange(zRange[0], zRange[1]);
 							mData.insert(pair<int, CTerritoryEx*>(ID, pTerritory));
-						}else if(sType == "RUNE_CASTLE")
-						{
-							CTerritoryEx *pTerritory = new CTerritoryEx();
-							pTerritory->SetType(RUNE_CASTLE);
-							for(INT32 n=0;n<vPoints.size();n++)
-							{
-								pTerritory->AddPoint(vPoints[n]);
-							}
-							pTerritory->AddZRange(zRange[0], zRange[1]);
-							mData.insert(pair<int, CTerritoryEx*>(ID, pTerritory));
-						}else if(sType == "SCHUTTGARD_CASTLE")
-						{
-							CTerritoryEx *pTerritory = new CTerritoryEx();
-							pTerritory->SetType(SCHUTTGARD_CASTLE);
-							for(INT32 n=0;n<vPoints.size();n++)
-							{
-								pTerritory->AddPoint(vPoints[n]);
-							}
-							pTerritory->AddZRange(zRange[0], zRange[1]);
-							mData.insert(pair<int, CTerritoryEx*>(ID, pTerritory));
 						}else if(sType == "BLOCK_OFFLINE_SHOP")
 						{
 							CTerritoryEx *pTerritory = new CTerritoryEx();
@@ -781,16 +761,6 @@ void CTerritoryChecker::ReadData(std::string sFile)
 						{
 							CTerritoryEx *pTerritory = new CTerritoryEx();
 							pTerritory->Set(x,X, y, Y, z, Z, GODDARD_CASTLE);
-							mData.insert(pair<int, CTerritoryEx*>(ID, pTerritory));
-						}else if(sType == "RUNE_CASTLE")
-						{
-							CTerritoryEx *pTerritory = new CTerritoryEx();
-							pTerritory->Set(x,X, y, Y, z, Z, RUNE_CASTLE);
-							mData.insert(pair<int, CTerritoryEx*>(ID, pTerritory));
-						}else if(sType == "SCHUTTGARD_CASTLE")
-						{
-							CTerritoryEx *pTerritory = new CTerritoryEx();
-							pTerritory->Set(x,X, y, Y, z, Z, SCHUTTGARD_CASTLE);
 							mData.insert(pair<int, CTerritoryEx*>(ID, pTerritory));
 						}else if(sType == "BLOCK_OFFLINE_SHOP")
 						{
