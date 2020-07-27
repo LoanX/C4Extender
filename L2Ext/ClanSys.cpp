@@ -51,6 +51,7 @@ void ClanSys::LeaveExpelLock(LPVOID lpRWLock)
 
 void ClanSys::Initialize()
 {
+	
 	InitializeCriticalSection(&g_ExpelBannedUsersLock);
 	g_HookManager.WriteCall(0x9701ED, DeleteExpelLock);
 	
@@ -143,6 +144,9 @@ void ClanSys::Initialize()
 	//Updating already logged in members privilege / clan skills
 	g_HookManager.WriteCall( 0x59203B, UpdateMembers, 0);
 	//Packets
+	
+	/* C4 Fix?
+	
 	g_HookManager.WriteCall( 0x590BA6, CPledge_OpenAllWindowPacket, 0);
 	g_HookManager.WriteCall( 0x591349, CPledge_OpenAllWindowPacket, 0);
 	g_HookManager.WriteCall( 0x8809DE, CPledge_OpenAllWindowPacket, 0);
@@ -179,6 +183,7 @@ void ClanSys::Initialize()
 	g_HookManager.WriteCall( 0x5A64BC, CPledge_UpdateInfoWindowPacket, 0);
 	g_HookManager.WriteCall( 0x5A6B49, CPledge_UpdateInfoWindowPacket, 0);
 	g_HookManager.WriteCall( 0x769251, CPledge_UpdateInfoWindowPacket, 0);
+	*/
 	
 	//Increase pledge level
 	g_HookManager.WriteCall( 0x898709, PledgeLevelUpByNPC, 0);
@@ -211,6 +216,8 @@ void ClanSys::Initialize()
 
 	LoadReputationData();
 	g_PledgeSkillDb.Init();
+
+	
 }
 
 void ClanSys::LoadReputationData()

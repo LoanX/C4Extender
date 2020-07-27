@@ -960,12 +960,25 @@ void CPledge::OpenAllWindowPacket(User *pUser, bool bGM, PWCHAR wszActiveUser)
 		//Prepare packet
 		if(!bGM)
 		{		
-			g_Log.Add(CLog::Error,"[%s] Sending...",__FUNCTION__);
-			// Interlude
+			/* Interlude
 			pSocket->Send("cdddSSdddddddddSdddb", 0x53, 0, pSD->nDBID, 0, pSD->wszClanName,
 				pSD->wszClanLeaderName, pSD->nCrestID, pSD->nLevel,
 				pSD->nCastleID, nAgitID, 10, nReputation,
-				pSD->nState, 0, nAllyID, wszAllianceName, nAllianceCrestID, nInWar, nMemberAmount, nBuffLen, cBuff);						
+				pSD->nState, 0, nAllyID, wszAllianceName, nAllianceCrestID, nInWar, nMemberAmount, nBuffLen, cBuff);
+			*/
+			try
+			{
+				pSocket->Send("cdddSSdddddddddSdddb", 0x53, 0, pSD->nDBID, 0, pSD->wszClanName,
+				pSD->wszClanLeaderName, pSD->nCrestID, pSD->nLevel,
+				pSD->nCastleID, nAgitID, 10, nReputation,
+				pSD->nState, 0, nAllyID, wszAllianceName, nAllianceCrestID, nInWar, (nMemberAmount-1), nBuffLen, cBuff);
+			}catch(...)
+			{
+				g_Log.Add(CLog::Error,"Exception detected [%s][%d]",__FUNCTION__,__LINE__);
+			}
+			
+			g_Log.Add(CLog::Error,"[%s] Sending...",__FUNCTION__);
+			
 		}
 		else
 		{
